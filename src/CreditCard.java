@@ -12,7 +12,12 @@ public class CreditCard {
     }
 
     public void withdrawMoney(int money) {
-        accountBalance -= money;
+        if (accountBalance - money < 0) {
+            System.out.println("Недостаточно средств на счету");
+        } else {
+            accountBalance -= money;
+        }
+
     }
 
     public void info() {
