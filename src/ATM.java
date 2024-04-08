@@ -33,6 +33,12 @@ public class ATM {
             money -= 50;
             countBanknotes50++;
         }
+        if (money == 10) {
+            money += 100;
+            countBanknotes100--;
+            money -= 50;
+            countBanknotes50++;
+        }
         while (money >= 20) {
             money -= 20;
             countBanknotes20++;
