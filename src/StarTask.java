@@ -4,6 +4,8 @@ public class StarTask {
         ATM atm = new ATM(10, 20, 10);
         atm.addBanknotes(2, 3, 4);
         atm.getMoney(570);
-        atm.getMoney(221);
+        atm.getMoney(180);
+        atm.getMoney(190);
+        atm.getMoney(110);
     }
 }
