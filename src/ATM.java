@@ -19,27 +19,37 @@ public class ATM {
         int countBanknotes20 = 0;
         int countBanknotes50 = 0;
         int countBanknotes100 = 0;
-        while (money >= 100) {
+         while (money >= 100 && countBanknotes100 < numberOfBanknotes100) {
             money -= 100;
             countBanknotes100++;
         }
-        if (money - 50 == 30) {
-            while (money >= 20) {
+        while (money >= 50 && countBanknotes50 < numberOfBanknotes50) {
+            money -= 50;
+            countBanknotes50++;
+        }
+        while (money >= 20 && countBanknotes20 < numberOfBanknotes20) {
+            money -= 20;
+            countBanknotes20++;
+        }
+        if (money == 30 && countBanknotes50 > 0) {
+            money += 50;
+            countBanknotes50--;
+            while (money >= 20 && countBanknotes20 < numberOfBanknotes20) {
                 money -= 20;
                 countBanknotes20++;
             }
         }
-        while (money >= 50) {
-            money -= 50;
-            countBanknotes50++;
-        }
-        if (money == 10) {
+        if (money == 10 && countBanknotes100 > 0 && countBanknotes50 < numberOfBanknotes50) {
             money += 100;
             countBanknotes100--;
             money -= 50;
             countBanknotes50++;
         }
-        while (money >= 20) {
+        if (money == 10 && countBanknotes50 != 0) {
+            money += 50;
+            countBanknotes50--;
+        }
+        while (money >= 20 && countBanknotes20 < numberOfBanknotes20) {
             money -= 20;
             countBanknotes20++;
         }
